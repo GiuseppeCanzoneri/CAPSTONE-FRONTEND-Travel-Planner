@@ -1,6 +1,6 @@
 import { Navbar, Container, Button, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faMapMarkerAlt, faSignInAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faMapMarkerAlt, faSignInAlt, faUser, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/icons/logo.png";
 import "./MyNav.css";
 
@@ -32,6 +32,10 @@ const MyNav = () => {
         <Button className="ms-5" variant="success">
           <FontAwesomeIcon className="me-1" icon={faSignInAlt} />
           <span>Login</span>
+        </Button>
+        <Button className="ms-2" variant="success">
+          <FontAwesomeIcon className="me-1" icon={faUserPlus} />
+          <span>Registration</span>
         </Button>
       </Container>
     </Navbar>
