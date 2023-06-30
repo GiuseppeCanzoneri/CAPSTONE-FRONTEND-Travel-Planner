@@ -2,7 +2,8 @@ import { Navbar, Container, Button, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faMapMarkerAlt, faSignInAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/icons/logo.png";
-import "../";
+import "./MyNav.css";
+
 const MyNav = () => {
   return (
     <Navbar className="bg-body-tertiary">
