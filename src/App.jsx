@@ -1,7 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MyNav from "./components/MyNav";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -9,11 +11,9 @@ function App() {
       <BrowserRouter>
         <MyNav />
         <Routes>
-          {/* <Route path="/home" element={<HomePage />} />
-        <Route path="/" element={<MyProfilePage />} />
-        <Route path="/profile/:userId" element={<MyProfilePage />} />
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/profile/:userId/experiences" element={<JobExperiences prop="643d132022a6ab00141a8567" />} /> */}
+          {/* * <Route path="/home" element={<HomePage />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         {/* <LinkedinFooter /> */}
       </BrowserRouter>

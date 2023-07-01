@@ -1,42 +1,80 @@
-import { Navbar, Container, Button, Nav } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faMapMarkerAlt, faSignInAlt, faUser, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { Link, useLocation } from "react-router-dom";
+import { getUserLoggedAction, logoutUserAction } from "../redux/actions/index";
 import logo from "../assets/icons/logo.png";
-import "./MyNav.css";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const MyNav = () => {
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.home.user);
+
+  useEffect(() => {
+    dispatch(getUserLoggedAction());
+  }, [dispatch]);
+
+  const handleLogout = () => {
+    dispatch(logoutUserAction());
+  };
+
   return (
-    <Navbar className="bg-body-tertiary">
+    <Navbar className="sticky-top" bg="white" variant="white">
       <Container>
-        <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" className="logo-mini" />
+        <Navbar.Brand>
+          <img src={logo} alt="Logo" width="100" height="100" />
+          Travel Planner
         </Navbar.Brand>
+
         <Nav className="me-auto">
-          <Nav.Item>
-            <Nav.Link href="#home">
+          {location.pathname !== "/login" && location.pathname !== "/register" && (
+            <Link className="nav-link" to={"/"}>
               <FontAwesomeIcon className="me-1" icon={faHome} />
-              <span>Home</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#destination">
-              <FontAwesomeIcon className="me-1" icon={faMapMarkerAlt} />
-              <span>Destinazione</span>
-            </Nav.Link>
-          </Nav.Item>
+              Home
+            </Link>
+          )}
         </Nav>
-        <Button className="ms-5" variant="outline-dark">
-          <FontAwesomeIcon className="me-1" icon={faUser} />
-          <span>Profilo</span>
-        </Button>
-        <Button className="ms-5" variant="success">
-          <FontAwesomeIcon className="me-1" icon={faSignInAlt} />
-          <span>Login</span>
-        </Button>
-        <Button className="ms-2" variant="success">
-          <FontAwesomeIcon className="me-1" icon={faUserPlus} />
-          <span>Registration</span>
-        </Button>
+
+        {location.pathname !== "/login" && location.pathname !== "/register" && (
+          <>
+            {user ? (
+              <NavDropdown
+                style={{ width: "130px", height: "30px" }}
+                className="bg-success rounded-2 "
+                title={
+                  <>
+                    <FontAwesomeIcon className="ms-3" icon={faUser} /> {user.nome}
+                  </>
+                }
+              >
+                <NavDropdown.Item className="bg-danger rounded-2" onClick={handleLogout}>
+                  Logout
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <Link className="nav-link" to={"/login"}>
+                <FontAwesomeIcon className="me-1" icon={faSignInAlt} />
+                Login/Register
+              </Link>
+            )}
+          </>
+        )}
+
+        {location.pathname === "/login" && (
+          <Link className="nav-link" to={"/register"}>
+            <FontAwesomeIcon className="me-1" icon={faUserPlus} />
+            Registration
+          </Link>
+        )}
+
+        {location.pathname === "/register" && (
+          <Link className="nav-link" to={"/login"}>
+            <FontAwesomeIcon className="me-1" icon={faSignInAlt} />
+            Login
+          </Link>
+        )}
       </Container>
     </Navbar>
   );
