@@ -5,7 +5,7 @@ import { faHome, faMapMarkerAlt, faSignInAlt, faUser, faUserPlus } from "@fortaw
 import { Link, useLocation } from "react-router-dom";
 import { getUserLoggedAction, logoutUserAction } from "../redux/actions/index";
 import logo from "../assets/icons/logo.png";
-import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const MyNav = () => {
   const location = useLocation();
