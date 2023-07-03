@@ -1,5 +1,5 @@
 import {
-  //   GET_DESTINATION,
+  GET_DESTINATION,
   //   GET_PREFERITI,
   GET_USER_LOGGED,
   LOGOUT_USER,
@@ -15,11 +15,11 @@ const initialState = {
 
 const homeReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case GET_DESTINATION:
-    //   return {
-    //     ...state,
-    //     destinations: action.payload,
-    //   };
+    case GET_DESTINATION:
+      return {
+        ...state,
+        destinations: action.payload,
+      };
     case GET_USER_LOGGED:
       return {
         ...state,

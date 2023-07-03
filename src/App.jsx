@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MyNav from "./components/MyNav";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import HomePage from "./components/HomePage";
+import MyFooter from "./components/MyFooter";
 
 function App() {
   return (
@@ -11,11 +13,11 @@ function App() {
       <BrowserRouter>
         <MyNav />
         <Routes>
-          {/* * <Route path="/home" element={<HomePage />} /> */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
-        {/* <LinkedinFooter /> */}
+        <MyFooter />
       </BrowserRouter>
     </div>
   );

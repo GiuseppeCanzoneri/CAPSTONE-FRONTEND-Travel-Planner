@@ -1,30 +1,30 @@
-// export const GET_DESTINATION = "GET_DESTINATION";
+export const GET_DESTINATION = "GET_DESTINATION";
 export const GET_USER_LOGGED = "GET_USER_LOGGED";
 export const LOGOUT_USER = "LOGOUT_USER";
 // export const GET_DETTAGLIO = "GET_DETTAGLIO";
 // export const GET_PREFERITI = "GET_PREFERITI";
 
-// export const getDestination = url => {
-//   const token = localStorage.getItem("token");
+export const getDestination = url => {
+  const token = localStorage.getItem("token");
 
-//   return async dispatch => {
-//     try {
-//       let resp = await fetch(url, {
-//         headers: {
-//           Authorization: `Bearer ${token}`
-//         }
-//       });
-//       if (resp.ok) {
-//         let destinations = await resp.json();
-//         destinations.content.sort(() => Math.random() - 0.5);
+  return async dispatch => {
+    try {
+      let resp = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (resp.ok) {
+        let destinations = await resp.json();
+        destinations.content.sort(() => Math.random() - 0.5);
 
-//         dispatch({ type: GET_DESTINATION, payload: destinations.content });
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+        dispatch({ type: GET_DESTINATION, payload: destinations.content });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
 export const getUserLoggedAction = () => {
   const token = localStorage.getItem("token");
