@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faMapMarkerAlt, faSignInAlt, faUser, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { FaRegStar, FaStar } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { getUserLoggedAction, logoutUserAction } from "../redux/actions/index";
 import logo from "../assets/icons/logo.png";
@@ -35,6 +36,11 @@ const MyNav = () => {
               Home
             </Link>
           )}
+
+          <Link className="nav-link" to={"/:id/preferiti"}>
+            <FaRegStar className=" mb-1 text-dark" />
+            Preferiti
+          </Link>
         </Nav>
 
         {location.pathname !== "/login" && location.pathname !== "/register" && (

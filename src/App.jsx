@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import HomePage from "./components/HomePage";
 import MyFooter from "./components/MyFooter";
 import Itinerary from "./components/Itinerary";
+import Preferiti from "./components/Preferiti";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/destinations/:id" element={<Itinerary />} />
+          <Route path="/:id/preferiti" element={<Preferiti />} />
         </Routes>
         <MyFooter />
       </BrowserRouter>

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Alert, Badge, Button, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getItinerary, getPreferitiAction } from "../redux/actions";
+import { getItinerary, getPreferiti } from "../redux/actions";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Itinerary = () => {
@@ -17,47 +17,47 @@ const Itinerary = () => {
   }, [params.id]);
 
   const destination = useSelector(state => state.home.destination);
-  //   const preferiti = useSelector(state => state.home.preferiti);
+  const preferiti = useSelector(state => state.home.preferiti);
 
-  //   const isPreferito = preferiti.length > 0 && preferiti.find(favourite => favourite.id === params.idFilm);
+  const isPreferito = preferiti.length > 0 && preferiti.find(favourite => favourite.id === params.id);
 
-  //   const filmPref = { idFilm: params.idFilm };
+  const destinationPref = { idDestination: params.id };
 
   const token = localStorage.getItem("token");
 
-  //   const addPreferito = async () => {
-  //     try {
-  //       const response = await fetch(`http://localhost:3001/users/me/preferiti`, {
-  //         method: "POST",
-  //         body: JSON.stringify(filmPref),
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       });
-  //       if (response.ok) {
-  //         dispatch(getPreferitiAction());
-  //       }
-  //     } catch (error) {
-  //       Alert(error);
-  //     }
-  //   };
+  const addPreferito = async () => {
+    try {
+      const response = await fetch(`http://localhost:3001/users/me/preferiti`, {
+        method: "POST",
+        body: JSON.stringify(destinationPref),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        dispatch(getPreferiti());
+      }
+    } catch (error) {
+      Alert(error);
+    }
+  };
 
-  //   const handleDelete = async () => {
-  //     try {
-  //       const response = await fetch(`http://localhost:3001/users/me/preferiti/${film.id}`, {
-  //         method: "DELETE",
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       });
-  //       if (response.ok) {
-  //         dispatch(getPreferitiAction());
-  //       }
-  //     } catch (error) {
-  //       alert(error);
-  //     }
-  //   };
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`http://localhost:3001/users/me/preferiti/${destination.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.ok) {
+        dispatch(getPreferiti());
+      }
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   return (
     <Container fluid className="text-dark mt-5">
@@ -87,7 +87,7 @@ const Itinerary = () => {
                       </div>
                     );
                   })}
-                  {/* {isPreferito ? (
+                  {isPreferito ? (
                     <Button
                       onClick={handleDelete}
                       type="button"
@@ -100,7 +100,7 @@ const Itinerary = () => {
                         border: "0",
                       }}
                     >
-                      <FaStar className="stelle" />
+                      <FaStar className="text-dark" />
                     </Button>
                   ) : (
                     <Button
@@ -115,9 +115,9 @@ const Itinerary = () => {
                         border: "0",
                       }}
                     >
-                      <FaRegStar className="stelle" />
+                      <FaRegStar className=" text-dark" />
                     </Button>
-                  )} */}
+                  )}
                 </Col>
               </Row>
             </Col>
