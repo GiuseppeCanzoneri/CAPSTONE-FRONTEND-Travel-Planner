@@ -43,7 +43,9 @@ const ListDestination = () => {
           </Row>
         </>
       ) : (
-        <p className="display-3 text-center">Loggati o registrati per visualizzare i film!</p>
+        <p className="display-3 fs-2 text-center bg-warning">
+          Loggati o registrati per visualizzare le nostre Destinazioni
+        </p>
       )}
     </Container>
   );
