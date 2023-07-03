@@ -1,8 +1,8 @@
 export const GET_DESTINATION = "GET_DESTINATION";
 export const GET_USER_LOGGED = "GET_USER_LOGGED";
 export const LOGOUT_USER = "LOGOUT_USER";
-// export const GET_DETTAGLIO = "GET_DETTAGLIO";
-// export const GET_PREFERITI = "GET_PREFERITI";
+export const GET_ITINERARY = "GET_ITINERARY";
+export const GET_PREFERITI = "GET_PREFERITI";
 
 export const getDestination = url => {
   const token = localStorage.getItem("token");
@@ -51,44 +51,45 @@ export const getUserLoggedAction = () => {
 export const logoutUserAction = () => {
   return { type: LOGOUT_USER };
 };
-// export const getDettagioAction = url => {
-//   const token = localStorage.getItem("token");
 
-//   return async dispatch => {
-//     try {
-//       let resp = await fetch(url, {
-//         headers: {
-//           Authorization: `Bearer ${token}`
-//         }
-//       });
-//       if (resp.ok) {
-//         let film = await resp.json();
+export const getItinerary = url => {
+  const token = localStorage.getItem("token");
 
-//         dispatch({ type: GET_DETTAGLIO, payload: film });
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+  return async dispatch => {
+    try {
+      let resp = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (resp.ok) {
+        let destination = await resp.json();
 
-// export const getPreferitiAction = () => {
-//   const token = localStorage.getItem("token");
-//   const url = "http://localhost:3001/users/me/preferiti";
-//   return async dispatch => {
-//     try {
-//       let resp = await fetch(url, {
-//         headers: {
-//           Authorization: `Bearer ${token}`
-//         }
-//       });
-//       if (resp.ok) {
-//         let data = await resp.json();
+        dispatch({ type: GET_ITINERARY, payload: destination });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
-//         dispatch({ type: GET_PREFERITI, payload: data });
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+export const getPreferiti = () => {
+  const token = localStorage.getItem("token");
+  const url = "http://localhost:3001/users/me/preferiti";
+  return async dispatch => {
+    try {
+      let resp = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (resp.ok) {
+        let data = await resp.json();
+
+        dispatch({ type: GET_PREFERITI, payload: data });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import HomePage from "./components/HomePage";
 import MyFooter from "./components/MyFooter";
+import Itinerary from "./components/Itinerary";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/destinations/:id" element={<Itinerary />} />
         </Routes>
         <MyFooter />
       </BrowserRouter>
