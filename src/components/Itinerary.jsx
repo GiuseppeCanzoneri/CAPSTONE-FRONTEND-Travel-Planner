@@ -66,8 +66,8 @@ const Itinerary = () => {
           <Row className="justify-content-center gy-5">
             <Col md={8} className="order-2 order-md-1">
               <Row className="justify-content-center gy-5">
-                <Col md={10} className="text-center border border-1 rounded-3  position-relative">
-                  <h2 className="mt-3 display-3">{destination.name}</h2>
+                <Col md={10} className="text-center border border-1 rounded-3 position-relative">
+                  <h2 className="mb-3 display-3">{destination.name}</h2>
                   {destination.description.split("\n\n").map((itinerary, index) => {
                     const lines = itinerary.split("\n").filter(line => line.trim() !== "");
                     const [day, ...activities] = lines;
