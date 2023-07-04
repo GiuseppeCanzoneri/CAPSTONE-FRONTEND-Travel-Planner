@@ -55,6 +55,11 @@ const MyNav = () => {
                   </>
                 }
               >
+                {user.role !== null && user.role === "ADMIN" && (
+                  <Link className="dropdown-item bg-secondary" to={`/admin`}>
+                    Back-office
+                  </Link>
+                )}
                 <NavDropdown.Item className="bg-danger rounded-2" onClick={handleLogout}>
                   Logout
                 </NavDropdown.Item>

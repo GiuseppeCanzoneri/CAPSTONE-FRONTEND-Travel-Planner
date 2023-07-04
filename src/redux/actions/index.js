@@ -3,6 +3,9 @@ export const GET_USER_LOGGED = "GET_USER_LOGGED";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const GET_ITINERARY = "GET_ITINERARY";
 export const GET_PREFERITI = "GET_PREFERITI";
+export const GET_DESTINAZIONE_DA_MODIFICARE = "GET_DESTINAZIONE_DA_MODIFICARE";
+
+export const getDestinationModify = destination => ({ type: GET_DESTINAZIONE_DA_MODIFICARE, payload: destination });
 
 export const getDestination = url => {
   const token = localStorage.getItem("token");
