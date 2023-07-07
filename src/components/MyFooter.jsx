@@ -9,12 +9,18 @@ const MyFooter = () => {
         <Row>
           <Col md={6}>
             <h5>About Us</h5>
-            <p>Lorem ipsum dolor.</p>
+            <p>
+              Travel Planner è un'app di viaggio all'avanguardia che ti aiuta a pianificare le tue avventure in modo
+              semplice ed efficiente. Siamo appassionati di esplorare il mondo e vogliamo condividere la nostra passione
+              con te. Con il nostro servizio, potrai scoprire le migliori destinazioni, pianificare itinerari
+              personalizzati e creare ricordi indimenticabili durante i tuoi viaggi. Unisciti a noi e inizia a
+              pianificare la tua prossima avventura!
+            </p>
           </Col>
           <Col md={3}>
             <h5>Contact Us</h5>
-            <p>123 Travel Street</p>
-            <p>City, Country</p>
+            <p>30 Via Rocca Pirrone</p>
+            <p>Palermo, Prizzi</p>
             <p>info@travelplanner.com</p>
           </Col>
           <Col md={3}>
