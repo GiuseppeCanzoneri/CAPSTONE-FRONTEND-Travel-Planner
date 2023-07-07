@@ -53,6 +53,7 @@ const Register = () => {
     <Container className="text-dark d-flex justify-content-center align-items-center">
       <Form className="rounded p-5 mt-5 form-register" onSubmit={sendRegister}>
         <Form.Group className="mb-3">
+          <h2 className="text-dark mb-5">REGISTRAZIONE</h2>
           <Form.Label>Username</Form.Label>
           <Form.Control
             required
