@@ -5,11 +5,136 @@
   background-position: 100%;
   background-position-y: 30%;
   height: 500px;
-  background-color: #212529;
+  background-color: #f5f5f5;
 }
 
 .destination-card {
   box-shadow: 0px 0px 5px 0px #000000;
   background-color: #212529;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.mouse {
+  width: 50px;
+  height: 70px;
+  border: 2px solid #000;
+  border-radius: 25px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mouse:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 3s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+.navbar {
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #6c757d;
+}
+
+.dropdown-custom .dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-custom .dropdown-menu {
+  min-width: 130px;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  transform-origin: top;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+.dropdown-custom.show .dropdown-menu {
+  transform: translateY(10px);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear;
+}
+
+.dropdown-custom .dropdown-item {
+  padding: 8px 16px;
+  color: #ffffff;
+  background-color: #0080ffd7;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-custom .dropdown-item:hover {
+  background-color: #6c757d;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .dropdown-custom .dropdown-item {
+    font-size: 0.9rem;
+  }
+}
+
+.round-button:hover {
+  transform: scale(1.1);
+}
+
+.admin-container {
+  background-image: url("./assets/icons/crud.avif");
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-position-y: 70%;
+}
+
+.bg-image {
+  background-image: url("./assets/icons/mattoni.avif");
+  padding: 20px;
+  background-size: cover;
 }

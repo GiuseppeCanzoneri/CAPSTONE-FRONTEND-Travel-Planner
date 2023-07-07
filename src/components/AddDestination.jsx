@@ -40,7 +40,7 @@ const AddDestination = ({ show, handleClose }) => {
   };
   return (
     <Modal show={show} onHide={handleClose} className="text-dark form-login">
-      <Modal.Header className="bg-white text-dark" closeButton>
+      <Modal.Header className="bg-dark text-white" closeButton>
         <Modal.Title>Aggiungi destination</Modal.Title>
       </Modal.Header>
       <Modal.Body className="bg-white">

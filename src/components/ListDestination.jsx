@@ -44,7 +44,7 @@ const ListDestination = () => {
         </>
       ) : (
         <p className="display-3 fs-2 text-center bg-warning">
-          Loggati o registrati per visualizzare le nostre Destinazioni
+          Per vedere le nostre mete devi essere registrato al sito!
         </p>
       )}
     </Container>

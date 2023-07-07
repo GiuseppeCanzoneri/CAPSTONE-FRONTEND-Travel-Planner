@@ -47,22 +47,19 @@ const MyNav = () => {
           <>
             {user ? (
               <NavDropdown
-                style={{ width: "130px", height: "30px" }}
-                className="bg-success rounded-2 "
+                className="dropdown-custom"
                 title={
                   <>
-                    <FontAwesomeIcon className="ms-3" icon={faUser} /> {user.nome}
+                    <FontAwesomeIcon className="me-1" icon={faUser} /> {user.nome}
                   </>
                 }
               >
                 {user.role !== null && user.role === "ADMIN" && (
-                  <Link className="dropdown-item bg-secondary" to={`/admin`}>
+                  <Link className="dropdown-item" to={`/admin`}>
                     Back-office
                   </Link>
                 )}
-                <NavDropdown.Item className="bg-danger rounded-2" onClick={handleLogout}>
-                  Logout
-                </NavDropdown.Item>
+                <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
               </NavDropdown>
             ) : (
               <Link className="nav-link" to={"/login"}>

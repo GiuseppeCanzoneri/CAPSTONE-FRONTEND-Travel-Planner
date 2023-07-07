@@ -37,70 +37,72 @@ const Preferiti = () => {
   };
 
   return (
-    <Container className="my-4">
-      {preferiti.length > 0 ? (
-        <>
-          <p className="display-3 text-dark">Destinazioni preferite:</p>
-          <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3">
-            {preferiti.map(destination => (
-              <Col key={destination.idDestination}>
-                <Card className="bg-dark">
-                  <Card.Img
-                    width="200px"
-                    height="400px"
-                    className="image-fluid rounded-2 position-relative"
-                    style={{ objectFit: "cover" }}
-                    variant="top"
-                    src={destination.urlCopertina}
-                  />
-                  <h5 className="text-center mt-1 text-white">{destination.name}</h5>
-                  <Button
-                    variant="danger"
-                    type="button"
-                    onClick={() => handleDelete(destination.id)}
-                    style={{
-                      position: "absolute",
-                      top: "10px",
-                      right: "10px",
-                    }}
-                  >
-                    <ImCross />
-                  </Button>
-                  <Button
-                    type="button"
-                    onClick={() => {
-                      navigate(`/destinations/${destination.id}`);
-                    }}
-                    style={{
-                      position: "absolute",
-                      top: "11px",
-                      right: "170px",
-                      backgroundColor: "#3f51b5",
-                      border: "0",
-                    }}
-                  >
-                    Leggi di più...
-                  </Button>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </>
-      ) : (
-        <Alert
-          className="fs-4 text-light"
-          style={{
-            border: "1px solid #3f51b5 !important",
-            backgroundColor: "#3f51b559",
-          }}
-        >
-          Non ci sono preferiti salvati! Aggiungine qualcuno per visualizzarlo in questa sezione.{" "}
-          <Link className="text-light" to={"/"}>
-            Torna alla home.
-          </Link>
-        </Alert>
-      )}
-    </Container>
+    <div className="admin-container">
+      <Container className="my-4">
+        {preferiti.length > 0 ? (
+          <>
+            <p className="display-3 text-dark">Destinazioni preferite:</p>
+            <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3">
+              {preferiti.map(destination => (
+                <Col key={destination.idDestination}>
+                  <Card className="bg-dark">
+                    <Card.Img
+                      width="200px"
+                      height="400px"
+                      className="image-fluid rounded-2 position-relative"
+                      style={{ objectFit: "cover" }}
+                      variant="top"
+                      src={destination.urlCopertina}
+                    />
+                    <h5 className="text-center mt-1 text-white">{destination.name}</h5>
+                    <Button
+                      variant="danger"
+                      type="button"
+                      onClick={() => handleDelete(destination.id)}
+                      style={{
+                        position: "absolute",
+                        top: "10px",
+                        right: "10px",
+                      }}
+                    >
+                      <ImCross />
+                    </Button>
+                    <Button
+                      type="button"
+                      onClick={() => {
+                        navigate(`/destinations/${destination.id}`);
+                      }}
+                      style={{
+                        position: "absolute",
+                        top: "11px",
+                        right: "170px",
+                        backgroundColor: "#3f51b5",
+                        border: "0",
+                      }}
+                    >
+                      Leggi di più...
+                    </Button>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </>
+        ) : (
+          <Alert
+            className="fs-4 text-light"
+            style={{
+              border: "1px solid #3f51b5 !important",
+              backgroundColor: "#3f51b559",
+            }}
+          >
+            Non ci sono preferiti salvati! Aggiungine qualcuno per visualizzarlo in questa sezione.{" "}
+            <Link className="text-light" to={"/"}>
+              Torna alla home.
+            </Link>
+          </Alert>
+        )}
+      </Container>
+    </div>
   );
 };
 

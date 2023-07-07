@@ -46,25 +46,25 @@ const EditDestination = ({ showEdit, handleCloseEdit }) => {
       <Modal.Header className="bg-dark text-white" closeButton>
         <Modal.Title>Modifica destination</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="bg-dark">
+      <Modal.Body className="bg-white">
         {destination !== null && (
           <Form onSubmit={editdestination}>
-            <Form.Group className="mb-3" controlId="nome">
+            <Form.Group className="mb-3 text-dark" controlId="nome">
               <Form.Label>Nome destination</Form.Label>
               <Form.Control
-                className="bg-dark text-light input-login"
+                className="bg-white text-dark input-login"
                 type="text"
-                placeholder="Es: MAdrid"
+                placeholder="Es: Madrid"
                 autoFocus
                 required
                 value={destination.name}
                 onChange={e => setdestination({ ...destination, name: e.target.value })}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="urlCopertina">
+            <Form.Group className="mb-3 text-dark" controlId="urlCopertina">
               <Form.Label>Url copertina</Form.Label>
               <Form.Control
-                className="bg-dark text-light input-login"
+                className="bg-white text-dark input-login"
                 type="text"
                 placeholder="Es: http://www..."
                 autoFocus
@@ -73,10 +73,10 @@ const EditDestination = ({ showEdit, handleCloseEdit }) => {
                 onChange={e => setdestination({ ...destination, urlCopertina: e.target.value })}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="descrizione">
-              <Form.Label>description</Form.Label>
+            <Form.Group className="mb-3 text-dark " controlId="descrizione">
+              <Form.Label>Description</Form.Label>
               <Form.Control
-                className="bg-dark text-light input-login"
+                className="bg-white text-dark input-login"
                 as="textarea"
                 rows={3}
                 placeholder="Es: Giorno 1 eccc...."

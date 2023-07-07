@@ -42,9 +42,9 @@ const DestinationSingle = ({ destination, handleShowEdit }) => {
 
   return (
     <div className="d-flex justify-content-between align-items-center">
-      <p className="text-dark text-truncate my-0 fs-3">{destination.name}</p>
-      <div className="d-flex flex-nowrap">
-        <Button onClick={handleShowConfirmationModal} type="button" variant="danger" className="text-white me-3">
+      <h3 className="text-dark text-truncate my-0">{destination.name}</h3>
+      <div className="d-flex">
+        <Button onClick={handleShowConfirmationModal} variant="danger" className="me-3">
           <ImBin />
         </Button>
         <Button
@@ -52,7 +52,6 @@ const DestinationSingle = ({ destination, handleShowEdit }) => {
             dispatch(getDestinationModify(destination));
             handleShowEdit();
           }}
-          type="button"
           variant="outline-secondary"
         >
           <FaPen />
@@ -64,8 +63,8 @@ const DestinationSingle = ({ destination, handleShowEdit }) => {
         <Modal.Header closeButton className="bg-dark text-white">
           <Modal.Title>Conferma eliminazione</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="bg-dark text-white">Sei sicuro di voler eliminare questa destination?</Modal.Body>
-        <Modal.Footer className="bg-dark text-white">
+        <Modal.Body className="bg-white text-dark">Sei sicuro di voler eliminare questa destinazione?</Modal.Body>
+        <Modal.Footer className="bg-white text-dark">
           <Button variant="secondary" onClick={handleCloseConfirmationModal}>
             Annulla
           </Button>

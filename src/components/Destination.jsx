@@ -1,15 +1,21 @@
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Destination = ({ destination }) => {
   const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/destinations/${destination.id}`);
+  };
+
   return (
-    <Card
+    <motion.div
       className="destination-card"
-      onClick={() => {
-        navigate(`/destinations/${destination.id}`);
-      }}
-      style={{ cursor: "pointer" }}
+      onClick={handleCardClick}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.2 }}
     >
       <Card.Img
         width="200px"
@@ -18,9 +24,10 @@ const Destination = ({ destination }) => {
         style={{ objectFit: "cover" }}
         variant="top"
         src={destination.urlCopertina}
-      />{" "}
+      />
       <h5 className="text-center mt-1 text-white">{destination.name}</h5>
-    </Card>
+    </motion.div>
   );
 };
+
 export default Destination;
