@@ -16,6 +16,10 @@ const ListDestination = () => {
 
   const destinations = useSelector(state => state.home.destinations);
   const user = useSelector(state => state.home.user);
+
+  // Filtra le destinazioni e prendi solo le prime sei
+  const filteredDestinations = destinations.slice(0, 8);
+
   return (
     <Container className="my-4">
       {user !== null ? (
@@ -34,7 +38,7 @@ const ListDestination = () => {
           </Form>
           <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3">
             <>
-              {destinations.map(destination => (
+              {filteredDestinations.map(destination => (
                 <Col key={destination.id}>
                   <Destination destination={destination} />
                 </Col>
