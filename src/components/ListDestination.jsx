@@ -17,7 +17,7 @@ const ListDestination = () => {
   const destinations = useSelector(state => state.home.destinations);
   const user = useSelector(state => state.home.user);
 
-  // Filtra le destinazioni e prendi solo le prime sei
+  // Filtra le destinazioni e prende solo le prime sei
   const filteredDestinations = destinations.slice(0, 8);
 
   return (
