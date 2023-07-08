@@ -7,7 +7,7 @@ Travel Planner è un'applicazione completa per la pianificazione e la gestione d
 
 Attraverso l'App Component principale, gli utenti possono navigare tra diverse pagine, inclusa la pagina di accesso (Login Component) e la pagina di registrazione (Register Component). Dopo aver effettuato l'accesso, possono accedere alla Dashboard, inserire la destinazione del viaggio tramite il DestinationForm Component e ottenere un itinerario personalizzato. 📝🌐
 
-L'itinerario viene visualizzato attraverso l'ItineraryComponent, che fornisce informazioni sulle attrazioni turistiche e le attività disponibili. Per rendere l'esperienza completa, Travel Planner offre anche una mappa interattiva (MapComponent) per visualizzare visivamente i luoghi dell'itinerario. Gli utenti possono inoltre accedere alla propria pagina del profilo (ProfileComponent) per visualizzare e modificare le informazioni personali. 👤🗺️
+L'itinerario viene visualizzato attraverso l'ItineraryComponent, che fornisce informazioni sulle attrazioni turistiche e le attività disponibili. Per rendere l'esperienza completa, Travel Planner offre anche una mappa interattiva (MapComponent) per visualizzare visivamente i luoghi dell'itinerario.
 
 Il backend del progetto utilizza Spring Boot e PostgreSQL per gestire l'autenticazione, l'autorizzazione degli utenti e l'accesso al database. Redux viene utilizzato per garantire un'esperienza fluida e reattiva, gestendo lo stato dell'app. Con Redux, le azioni e gli stati relativi all'autenticazione (AuthActions e AuthReducer) e alla destinazione del viaggio (DestinationActions e DestinationReducer) vengono gestiti in modo efficiente. 🔒🔄
 
