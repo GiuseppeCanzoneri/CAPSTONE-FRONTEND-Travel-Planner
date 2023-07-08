@@ -26,15 +26,11 @@ const MyFooter = () => {
           <Col md={3}>
             <h5>Follow Us</h5>
             <div className="d-flex">
-              <a href="#" className="me-2 text-light">
-                <FaFacebookF />
-              </a>
-              <a href="#" className="me-2 text-light">
-                <FaTwitter />
-              </a>
-              <a href="#" className="me-2 text-light">
-                <FaInstagram />
-              </a>
+              <FaFacebookF className="me-3" />
+
+              <FaTwitter className="me-3" />
+
+              <FaInstagram className="me-3" />
             </div>
           </Col>
         </Row>
