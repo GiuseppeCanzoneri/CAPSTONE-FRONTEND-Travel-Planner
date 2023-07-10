@@ -6,6 +6,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { getUserLoggedAction, logoutUserAction } from "../redux/actions/index";
 import logo from "../assets/icons/logo.png";
+
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const MyNav = () => {
@@ -40,6 +41,11 @@ const MyNav = () => {
           <Link className="nav-link" to={"/:id/preferiti"}>
             <FaRegStar className=" mb-1 text-dark" />
             Preferiti
+          </Link>
+
+          <Link className="nav-link" to={"/all-destinations"}>
+            <FontAwesomeIcon className="me-1" icon={faMapMarkerAlt} />
+            Tutte le destinazioni
           </Link>
         </Nav>
 
