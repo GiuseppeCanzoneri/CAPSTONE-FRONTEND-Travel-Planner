@@ -42,11 +42,6 @@ const MyNav = () => {
             <FaRegStar className=" mb-1 text-dark" />
             Preferiti
           </Link>
-
-          <Link className="nav-link" to={"/all-destinations"}>
-            <FontAwesomeIcon className="me-1" icon={faMapMarkerAlt} />
-            Tutte le destinazioni
-          </Link>
         </Nav>
 
         {location.pathname !== "/login" && location.pathname !== "/register" && (

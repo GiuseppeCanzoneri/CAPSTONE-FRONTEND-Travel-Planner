@@ -1,8 +1,10 @@
+// ListDestination.js
+import React, { useEffect, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 import { getDestination } from "../redux/actions";
 import Destination from "./Destination";
+import MapComponent from "./MapComponent";
 
 const ListDestination = () => {
   const dispatch = useDispatch();
@@ -17,7 +19,6 @@ const ListDestination = () => {
   const destinations = useSelector(state => state.home.destinations);
   const user = useSelector(state => state.home.user);
 
-  // Filtra le destinazioni e prende solo le prime sei
   const filteredDestinations = destinations.slice(0, 8);
 
   return (
@@ -26,7 +27,7 @@ const ListDestination = () => {
         <>
           <Form onSubmit={e => e.preventDefault()}>
             <Form.Group className="mb-3">
-              <Form.Label className="text-dark fs-3 ">Cerca tra le nostre Destinazioni:</Form.Label>
+              <Form.Label className="text-dark fs-3">Cerca tra le nostre Destinazioni:</Form.Label>
               <Form.Control
                 className="input-ricerca"
                 type="text"
@@ -37,14 +38,13 @@ const ListDestination = () => {
             </Form.Group>
           </Form>
           <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3">
-            <>
-              {filteredDestinations.map(destination => (
-                <Col key={destination.id}>
-                  <Destination destination={destination} />
-                </Col>
-              ))}
-            </>
+            {filteredDestinations.map(destination => (
+              <Col key={destination.id}>
+                <Destination destination={destination} />
+              </Col>
+            ))}
           </Row>
+          <MapComponent destinations={filteredDestinations} />
         </>
       ) : (
         <p className="display-3 fs-2 text-center bg-warning">

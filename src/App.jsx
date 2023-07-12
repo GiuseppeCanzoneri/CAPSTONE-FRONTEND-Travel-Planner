@@ -1,3 +1,4 @@
+import "leaflet/dist/leaflet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -9,7 +10,6 @@ import MyFooter from "./components/MyFooter";
 import Itinerary from "./components/Itinerary";
 import Preferiti from "./components/Preferiti";
 import Admin from "./components/Admin";
-import AllDestinations from "./components/AllDestinations";
 
 function App() {
   return (
@@ -21,7 +21,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/destinations/:id" element={<Itinerary />} />
-          <Route path="/all-destinations" component={<AllDestinations />} />
 
           <Route path="/:id/preferiti" element={<Preferiti />} />
           <Route path="/admin" element={<Admin />} />
