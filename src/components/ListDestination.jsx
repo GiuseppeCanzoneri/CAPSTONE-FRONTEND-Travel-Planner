@@ -44,7 +44,7 @@ const ListDestination = () => {
               </Col>
             ))}
           </Row>
-          <MapComponent destinations={filteredDestinations} />
+          <MapComponent destinations={destinations} />
         </>
       ) : (
         <p className="display-3 fs-2 text-center bg-warning">

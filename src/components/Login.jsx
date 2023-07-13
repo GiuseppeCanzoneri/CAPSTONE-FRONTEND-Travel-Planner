@@ -55,7 +55,7 @@ const Login = () => {
   };
 
   return (
-    <Container className="text-light d-flex justify-content-center align-items-center">
+    <Container className="text-dark d-flex justify-content-center align-items-center">
       {error && (
         <Alert variant="danger" onClose={() => setError(null)} dismissible>
           {errorMessage}
