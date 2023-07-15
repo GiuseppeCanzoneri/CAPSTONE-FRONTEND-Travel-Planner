@@ -43,16 +43,11 @@ const MapComponent = ({ destinations }) => {
   }, [destinations]);
 
   return (
-    <div id="map" style={{ height: "400px", width: "100%" }}>
-      <MapContainer center={[0, 0]} zoom={2}>
+    <div id="map" style={{ height: "400px" }}>
+      <MapContainer center={[0, 0]} zoom={2} style={{ height: "100%", width: "100%" }}>
         <TileLayer
-          url="https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
-          attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
-          maxZoom={18}
-          id="mapbox/streets-v11"
-          tileSize={512}
-          zoomOffset={-1}
-          accessToken="pk.eyJ1IjoiZ2l1c2VwcGUwMTgiLCJhIjoiY2xrMTZkYjJqMDNobjNobzc4aTZjbnhodyJ9.xVoIhY5gb-aY9P-2fQ52Ug"
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
         />
         {markers}
       </MapContainer>
