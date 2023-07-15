@@ -7,7 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import { getUserLoggedAction, logoutUserAction } from "../redux/actions/index";
 import logo from "../assets/icons/logo.png";
 
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const MyNav = () => {
   const location = useLocation();
@@ -51,7 +51,10 @@ const MyNav = () => {
                 className="dropdown-custom"
                 title={
                   <>
-                    <FontAwesomeIcon className="me-1" icon={faUser} /> {user.nome}
+                    <Button variant="outline-dark">
+                      {" "}
+                      <FontAwesomeIcon className="me-1" icon={faUser} /> {user.nome}
+                    </Button>
                   </>
                 }
               >

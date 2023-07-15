@@ -18,7 +18,7 @@ const ListDestination = () => {
   const destinations = useSelector(state => state.home.destinations);
   const user = useSelector(state => state.home.user);
 
-  const filteredDestinations = destinations.slice(0, 8);
+  const filteredDestinations = destinations.slice(0, 12);
 
   return (
     <Container className="my-4">
