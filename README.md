@@ -28,6 +28,8 @@ https://github.com/GiuseppeCanzoneri/CAPSTONE_PROJECT
 
 Se hai domande, suggerimenti o feedback riguardo a TravelPlanner , non esitare a contattarci:
 
+-📧 Email: gcanzoneri3@gmail.com -👥 LinkedIn: www.linkedin.com/in/giuseppe-canzoneri-94828b270 -🐙 GitHub: https://github.com/GiuseppeCanzoneri
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
