@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
+import { Button } from "react-bootstrap";
+import L from "leaflet";
 
 const MapComponent = ({ destinations }) => {
   const [markers, setMarkers] = useState([]);
+  const navigate = useNavigate();
 
   const getCoordinates = async destination => {
     try {
@@ -21,6 +25,10 @@ const MapComponent = ({ destinations }) => {
     }
   };
 
+  const handleMarkerClick = destination => {
+    navigate(`/destinations/${destination.id}`);
+  };
+
   useEffect(() => {
     const renderMarkers = async () => {
       const resolvedMarkers = [];
@@ -28,8 +36,13 @@ const MapComponent = ({ destinations }) => {
         const coordinates = await getCoordinates(destination);
         if (coordinates && destination.urlCopertina) {
           resolvedMarkers.push(
-            <Marker key={destination.id} position={[coordinates[1], coordinates[0]]}>
-              <Popup>{destination.name}</Popup>
+            <Marker
+              key={destination.id}
+              position={[coordinates[1], coordinates[0]]}
+              icon={createCustomIcon(destination.urlCopertina)}
+              onClick={() => handleMarkerClick(destination)}
+            >
+              <CustomPopup destination={destination} />
             </Marker>
           );
         }
@@ -40,7 +53,17 @@ const MapComponent = ({ destinations }) => {
     if (destinations && destinations.length > 0) {
       renderMarkers();
     }
-  }, [destinations]);
+  }, [destinations, navigate]);
+
+  // Funzione per creare un'icona personalizzata utilizzando l'URL della copertina
+  const createCustomIcon = urlCopertina => {
+    return new L.divIcon({
+      html: `<img src="${urlCopertina}" alt="Marker Icon" style="width: 25px; height: 41px;" />`,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+    });
+  };
 
   return (
     <div id="map" style={{ height: "400px" }}>
@@ -52,6 +75,26 @@ const MapComponent = ({ destinations }) => {
         {markers}
       </MapContainer>
     </div>
+  );
+};
+
+const CustomPopup = ({ destination }) => {
+  const navigate = useNavigate();
+
+  const handlePopupClick = () => {
+    navigate(`/destinations/${destination.id}`);
+  };
+
+  return (
+    <Popup>
+      <div>
+        <h3>{destination.name}</h3>
+        <img src={destination.urlCopertina} alt={destination.name} style={{ width: "100px", height: "100px" }} />
+      </div>
+      <Button className="mt-3" onClick={handlePopupClick}>
+        Vai all'itinerario
+      </Button>
+    </Popup>
   );
 };
 

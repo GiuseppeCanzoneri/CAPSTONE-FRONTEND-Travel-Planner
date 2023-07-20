@@ -18,7 +18,7 @@ const ListDestination = () => {
   const destinations = useSelector(state => state.home.destinations);
   const user = useSelector(state => state.home.user);
 
-  const filteredDestinations = destinations.slice(0, 12);
+  const filteredDestinations = destinations.slice(0, 8);
 
   return (
     <Container className="my-4">
@@ -43,7 +43,17 @@ const ListDestination = () => {
               </Col>
             ))}
           </Row>
-          <MapComponent destinations={destinations} />
+          <div className="mt-3">
+            <div>
+              <h2 className="display-4 fw-bold fs-2">Esplora il Mondo</h2>
+              <p className="fs-4">
+                Scopri le meravigliose destinazioni disponibili! Qui troverai solo alcune delle 8 destinazioni
+                incredibili che puoi esplorare. Continua a scorrere la mappa per trovare altre avventure!
+              </p>
+            </div>
+
+            <MapComponent destinations={destinations} />
+          </div>
         </>
       ) : (
         <p className="display-3 fs-2 text-center bg-warning">
