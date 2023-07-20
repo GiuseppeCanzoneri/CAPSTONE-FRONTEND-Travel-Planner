@@ -16,6 +16,18 @@ Il backend del progetto utilizza Spring Boot e PostgreSQL per gestire l'autentic
 
 In sintesi, Travel Planner è un'applicazione potente e completa che consente agli utenti di pianificare e gestire i propri viaggi in modo semplice e coinvolgente. Sfruttando tecnologie moderne come React, Spring Boot e Redux, l'app offre un'esperienza personalizzata e intuitiva, garantendo al contempo la sicurezza delle informazioni utente. 🚀🌟
 
+# Contributi al Progetto
+
+Se sei interessato a partecipare allo sviluppo, controlla il repository del frontend per ulteriori informazioni:
+
+👉 TravelPlanner Backend Repository👈
+
+https://github.com/GiuseppeCanzoneri/CAPSTONE_PROJECT
+
+# Contattaci
+
+Se hai domande, suggerimenti o feedback riguardo a TravelPlanner , non esitare a contattarci:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
