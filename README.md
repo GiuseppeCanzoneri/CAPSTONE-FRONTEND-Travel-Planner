@@ -18,7 +18,7 @@ In sintesi, Travel Planner è un'applicazione potente e completa che consente ag
 
 # Contributi al Progetto
 
-Se sei interessato a partecipare allo sviluppo, controlla il repository del frontend per ulteriori informazioni:
+Se sei interessato a partecipare allo sviluppo, controlla il repository del backend per ulteriori informazioni:
 
 👉 TravelPlanner Backend Repository👈
 
