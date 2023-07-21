@@ -36,6 +36,10 @@ const ListDestination = () => {
               />
             </Form.Group>
           </Form>
+          <h2 className="fs-3 display-4 mb-3">
+            La tua prossima avventura inizia qui. Inserisci il luogo che desideri visitare e scopri il tuo itinerario
+            ideale!
+          </h2>
           <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3">
             {filteredDestinations.map(destination => (
               <Col key={destination.id}>
